@@ -32,9 +32,9 @@ Terminal={term}
 Categories={tags}"""
 
 name = f"{name}.desktop"
-home = os.path.expanduser("~")
+path = os.path.expanduser("~") + f"/.local/share/applications/{name}"
 
-with open(f"{home}/.local/share/applications/{name}", "w") as desktop_file:
+with open(path, "w") as desktop_file:
 	desktop_file.write(file)
 
-print(f"Entry complete! Desktop file written to {home}/.local/share/applications/{name}{home}/.local/share/applications/{name}")
+print(f"Entry complete! Desktop file written to {path}")
