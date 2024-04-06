@@ -6,7 +6,6 @@ name = input("Enter app name: ")
 desc = input("Enter app description: ")
 icon = input("Drag and drop icon path: ").split("'")[1]
 path = input("Drag and drop executable path: ")
-
 tags = []
 
 while True:
