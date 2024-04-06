@@ -4,8 +4,10 @@ import os
 
 name = input("Enter app name: ")
 desc = input("Enter app description: ")
-icon = input("Drag and drop icon path: ").split("'")[1]
-path = input("Drag and drop executable path: ")
+icon = input("Drag and drop icon: ").split("'")[1]
+exec = input("Drag and drop executable: ").split("'")[1]
+term = input("Is this a terminal program? (y/n): ")
+term = "true" if term == "y" else "false";
 tags = []
 
 while True:
@@ -25,13 +27,14 @@ Encoding=UTF-8
 Name={name}
 Comment={desc}
 Icon={icon}
-Exec={path}
-Terminal=false
+Exec={exec}
+Terminal={term}
 Categories={tags}"""
 
-with open(f"{name}.desktop", "w") as desktop_file:
+name = f"{name}.desktop"
+home = os.path.expanduser("~")
+
+with open(f"{home}/.local/share/applications/{name}", "w") as desktop_file:
 	desktop_file.write(file)
 
-os.system(f"mv {name}.desktop ~/.local/share/applications")
-
-print("Entry complete!")
+print(f"Entry complete! Desktop file written to {home}/.local/share/applications/{name}{home}/.local/share/applications/{name}")
