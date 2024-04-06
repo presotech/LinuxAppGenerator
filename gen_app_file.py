@@ -8,7 +8,6 @@ icon = input("Drag and drop icon path: ").split("'")[1]
 path = input("Drag and drop executable path: ")
 
 tags = []
-tag = ""
 
 while True:
 	tag = input("Enter tag (enter quit when done): ")
