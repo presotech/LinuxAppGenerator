@@ -5,7 +5,7 @@ import os
 name = input("Enter app name: ")
 desc = input("Enter app description: ")
 icon = input("Drag and drop icon: ").split("'")[1]
-exec = input("Drag and drop executable: ").split("'")[1]
+prog = input("Drag and drop executable: ").split("'")[1]
 term = input("Is this a terminal program? (y/n): ")
 term = "true" if term == "y" else "false";
 tags = []
@@ -27,7 +27,7 @@ Encoding=UTF-8
 Name={name}
 Comment={desc}
 Icon={icon}
-Exec={exec}
+Exec={prog}
 Terminal={term}
 Categories={tags}"""
 
